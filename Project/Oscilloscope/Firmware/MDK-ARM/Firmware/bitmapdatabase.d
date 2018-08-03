@@ -1,0 +1,9 @@
+firmware\bitmapdatabase.o: ..\..\Graphic\generated\images\src\BitmapDatabase.cpp
+firmware\bitmapdatabase.o: ..\..\..\..\touchgfx\framework\include\touchgfx/Bitmap.hpp
+firmware\bitmapdatabase.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+firmware\bitmapdatabase.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+firmware\bitmapdatabase.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Types.hpp
+firmware\bitmapdatabase.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\bitmapdatabase.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+firmware\bitmapdatabase.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Config.hpp
+firmware\bitmapdatabase.o: ..\..\Graphic\generated\images\include\BitmapDatabase.hpp

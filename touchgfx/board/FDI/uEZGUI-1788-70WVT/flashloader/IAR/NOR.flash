@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$PROJ_DIR$\NOR.out</exe>
+  <flash_base>0x80000000</flash_base>
+  <page>32</page>
+  <block>128 0x10000</block>
+  <macro>$PROJ_DIR$\NOR.mac</macro>
+  <aggregate>1</aggregate>
+  <args_doc>[--clock] Passes the clock frequency to the flash loader; value is the CPU clock speed in kHz. The default clock frequency value is 14,746 kHz.</args_doc> 
+</flash_device>

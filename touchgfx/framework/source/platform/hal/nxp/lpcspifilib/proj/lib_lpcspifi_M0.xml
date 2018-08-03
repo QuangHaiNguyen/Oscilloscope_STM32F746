@@ -1,0 +1,19 @@
+<project xmlns:xi="http://www.w3.org/2001/XInclude"
+	type="Static library" name="lpcspifilib_M0"
+	chip="Generic-M0" vendor="NXP">
+	<import src="../src" dest="src">
+		<include>*.c</include>
+		<include>*.h</include>
+	</import>
+	<import src="../inc" dest="inc">
+		<include>*.h</include>
+	</import>
+	<setting id="compiler.def">
+		<value>CORE_M0</value>
+	</setting>
+
+	<setting id="compiler.inc">
+		<value>${workspace_loc:/${ProjName}/inc}</value>
+	</setting>
+
+</project>

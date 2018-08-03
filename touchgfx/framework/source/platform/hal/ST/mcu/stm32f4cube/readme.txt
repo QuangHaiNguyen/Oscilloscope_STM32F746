@@ -1,0 +1,2 @@
+This MCU package contains a subset of the STM32CubeF4 driver package, version 1.5.0.
+The full STM32F4Cube driver package can be downloaded here: http://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-embedded-software/stm32cubef4.html?icmp=tt3137_gl_pron_dec2015&sc=stm32cubef4-pr

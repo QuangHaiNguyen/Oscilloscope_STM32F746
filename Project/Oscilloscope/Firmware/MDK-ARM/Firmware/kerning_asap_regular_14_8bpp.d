@@ -1,0 +1,9 @@
+firmware\kerning_asap_regular_14_8bpp.o: ..\..\Graphic\generated\fonts\src\Kerning_Asap_Regular_14_8bpp.cpp
+firmware\kerning_asap_regular_14_8bpp.o: ..\..\..\..\touchgfx\framework\include\touchgfx/Font.hpp
+firmware\kerning_asap_regular_14_8bpp.o: ..\..\..\..\touchgfx\framework\include\touchgfx/TextProvider.hpp
+firmware\kerning_asap_regular_14_8bpp.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+firmware\kerning_asap_regular_14_8bpp.o: ..\..\..\..\touchgfx\framework\include\touchgfx/Unicode.hpp
+firmware\kerning_asap_regular_14_8bpp.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Types.hpp
+firmware\kerning_asap_regular_14_8bpp.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\kerning_asap_regular_14_8bpp.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+firmware\kerning_asap_regular_14_8bpp.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Config.hpp

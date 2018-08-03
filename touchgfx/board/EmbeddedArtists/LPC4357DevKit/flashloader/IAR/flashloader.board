@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+   <pass>
+     <loader>$TOOLKIT_DIR$\config\flashloader\NXP\FlashNXPLPC1024K_BankA.flash</loader>
+     <range>CODE 0x1A000000 0x1A7FFFFF</range>
+   </pass>
+  <pass>
+    <loader>$PROJ_DIR$\NOR.flash</loader>
+    <range>CODE 0x1C000000 0x1CFFFFFF</range> 
+  </pass>
+</flash_board>

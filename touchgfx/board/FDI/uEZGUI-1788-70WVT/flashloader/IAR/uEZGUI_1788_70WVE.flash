@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$PROJ_DIR$\FlashLoader_UEZGUI_1788.out</exe>
+  <flash_base>0x00000000</flash_base>
+  <page>512</page>
+  <block>16 0x1000</block>
+  <block>14 0x8000</block>
+  <macro>$PROJ_DIR$\LPC177x_8x.mac</macro>
+  <aggregate>1</aggregate>
+  <args_doc>[--clock] Passes the clock frequency to the flash loader; value is the CPU clock speed in kHz. The default clock frequency value is 14,746 kHz.</args_doc> 
+</flash_device>

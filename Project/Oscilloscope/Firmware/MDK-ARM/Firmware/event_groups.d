@@ -1,0 +1,15 @@
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\event_groups.c
+firmware\event_groups.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\FreeRTOS.h
+firmware\event_groups.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+firmware\event_groups.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\event_groups.o: ..\..\Graphic\platform\os\FreeRTOSConfig.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\projdefs.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\portable.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\deprecated_definitions.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\portable\RVDS\ST_CM7\portmacro.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\mpu_wrappers.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\task.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\list.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\timers.h
+firmware\event_groups.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\event_groups.h

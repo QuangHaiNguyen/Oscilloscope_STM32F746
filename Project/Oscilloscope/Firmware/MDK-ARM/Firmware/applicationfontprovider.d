@@ -1,0 +1,13 @@
+firmware\applicationfontprovider.o: ..\..\Graphic\generated\fonts\src\ApplicationFontProvider.cpp
+firmware\applicationfontprovider.o: ..\..\Graphic\generated\fonts\include\fonts/ApplicationFontProvider.hpp
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/FontManager.hpp
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/Font.hpp
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/TextProvider.hpp
+firmware\applicationfontprovider.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/Unicode.hpp
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Types.hpp
+firmware\applicationfontprovider.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\applicationfontprovider.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Config.hpp
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/InternalFlashFont.hpp
+firmware\applicationfontprovider.o: ..\..\..\..\touchgfx\framework\include\touchgfx/ConstFont.hpp

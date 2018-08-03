@@ -1,0 +1,50 @@
+LPCSpifilib version <0.06>
+==========================
+Release date <6/25/2014>
+Change Log:
+1. Changed identify to allow dynamic ID bytes per MFG/PART #. Moved to common
+   module.
+2. Added support for S25FL129P (256kB sectors).
+3. Verified S25FL129P 64kB sectors variant.
+4. Renamed familes to indicate functionality in place of root device.
+   (This was done to avoid confusion over where devices reside).
+5. Family cleanup to aid in comparison.
+6. Removed Chip.h dependency.
+7. Moved getInfo to common module.
+8. Code/Memory optimizations.
+9. LPCXpresso XML projects added.
+10. M0 Library added.
+11. Sub-block erase fixed for devices with full capability.
+12. IAR libarary renamed to match Keil library
+13. Moved project files into proj directory
+
+Known issues: (carried forward)
+1. Option SPIFI_CAP_NOBLOCK is not implemented.
+2. Will break IAR examples in LPCOpen v2.12 [Libraries in projects must be
+renamed from lib_llpcspifi_Mx.a to lib_lpcspifi_Mx.a]
+
+LPCSpifilib version <0.05>
+==========================
+Release date <5/15/2014>
+Change Log:
+1. Comment cleanup.
+2. Added support for 40xx series
+3. Changed spifiInit() api to include spifi control register address.
+4. Changed spifiInitDevice() to include spifi control register address.
+
+Known issues: (carried forward)
+1. Option SPIFI_CAP_NOBLOCK is not implemented.
+2. Option SPIFI_CAP_SUBBLKERASE is not working.
+3. Device S25FL129P is un-tested.
+
+
+LPCSpifilib version <0.04>
+===========================
+Release date <4/25/2014>
+Change Log:
+1. Initial version.
+
+Known issues:
+1. Option SPIFI_CAP_NOBLOCK is not implemented.
+2. Option SPIFI_CAP_SUBBLKERASE is not working.
+3. Device S25FL129P is un-tested.

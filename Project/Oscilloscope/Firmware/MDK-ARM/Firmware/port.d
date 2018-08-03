@@ -1,0 +1,12 @@
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\portable\RVDS\ST_CM7\port.c
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\FreeRTOS.h
+firmware\port.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+firmware\port.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\port.o: ..\..\Graphic\platform\os\FreeRTOSConfig.h
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\projdefs.h
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\portable.h
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\deprecated_definitions.h
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\portable\RVDS\ST_CM7\portmacro.h
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\mpu_wrappers.h
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\task.h
+firmware\port.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\list.h

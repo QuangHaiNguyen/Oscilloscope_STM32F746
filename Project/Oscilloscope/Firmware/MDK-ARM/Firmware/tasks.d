@@ -1,0 +1,16 @@
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\tasks.c
+firmware\tasks.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+firmware\tasks.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\FreeRTOS.h
+firmware\tasks.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+firmware\tasks.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\tasks.o: ..\..\Graphic\platform\os\FreeRTOSConfig.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\projdefs.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\portable.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\deprecated_definitions.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\portable\RVDS\ST_CM7\portmacro.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\mpu_wrappers.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\task.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\list.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\timers.h
+firmware\tasks.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\StackMacros.h

@@ -1,0 +1,13 @@
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\portable\MemMang\heap_2.c
+firmware\heap_2.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\FreeRTOS.h
+firmware\heap_2.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+firmware\heap_2.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\heap_2.o: ..\..\Graphic\platform\os\FreeRTOSConfig.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\projdefs.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\portable.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\deprecated_definitions.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\portable\RVDS\ST_CM7\portmacro.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\mpu_wrappers.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\task.h
+firmware\heap_2.o: ..\..\..\..\touchgfx\os\FreeRTOS8.2.0\Source\include\list.h

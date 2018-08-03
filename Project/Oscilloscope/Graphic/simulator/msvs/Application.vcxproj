@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp" />
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2.cpp" />
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2_icon.cpp" />
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp" />
+    <ClCompile Include="..\..\gui\src\common\ChannelControlPanel.cpp" />
+    <ClCompile Include="..\..\gui\src\common\CustomListElement.cpp" />
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp" />
+    <ClCompile Include="..\..\gui\src\common\Graph.cpp" />
+    <ClCompile Include="..\..\gui\src\common\Marker.cpp" />
+    <ClCompile Include="..\..\gui\src\common\TriggerLine.cpp" />
+    <ClCompile Include="..\..\gui\src\main_screen\MainPresenter.cpp" />
+    <ClCompile Include="..\..\gui\src\main_screen\MainView.cpp" />
+    <ClCompile Include="..\..\gui\src\model\Model.cpp" />
+    <ClCompile Include="..\..\simulator\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\fonts\RobotoCondensed-Regular.ttf" />
+    <None Include="..\..\assets\images\bg.png" />
+    <None Include="..\..\assets\images\counter_box.png" />
+    <None Include="..\..\assets\images\down_btn.png" />
+    <None Include="..\..\assets\images\down_btn_disabled.png" />
+    <None Include="..\..\assets\images\down_btn_pressed.png" />
+    <None Include="..\..\assets\images\up_btn.png" />
+    <None Include="..\..\assets\images\up_btn_disabled.png" />
+    <None Include="..\..\assets\images\up_btn_pressed.png" />
+    <None Include="..\..\assets\texts\texts.xlsx" />
+    <None Include="..\..\config\msvs\Application.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\touch\SDL2TouchController.hpp" />
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\hal\simulator\sdl2\HALSDL2.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\ChannelControlPanel.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\CustomListElement.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\Graph.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\main_header.h" />
+    <ClInclude Include="..\..\gui\include\gui\common\Marker.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\stm32f7xx_hal.h" />
+    <ClInclude Include="..\..\gui\include\gui\common\TriggerLine.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\main_screen\MainPresenter.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\main_screen\MainView.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(TouchGFXReleasePath)\config\TouchGFX.rc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7816996A-1585-4357-8095-4E4BB2DE6FC2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Application</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\config\msvs\Application.props" />
+    <Import Project="$(TouchGFXReleasePath)\config\msvs\touchgfx_sdl2.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\config\msvs\Application.props" />
+    <Import Project="$(TouchGFXReleasePath)\config\msvs\touchgfx_sdl2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\build\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\build\$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\build\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\build\$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4355;4457;4458;4459</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+      <DisableSpecificWarnings>4355;4457;4458;4459</DisableSpecificWarnings>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2.dll $(OutDir)
+copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2_image.dll $(OutDir)
+copy $(TouchGFXReleasePath)\lib\sdl2\win32\libpng16-16.dll $(OutDir)
+copy $(TouchGFXReleasePath)\lib\sdl2\win32\zlib1.dll $(OutDir)
+if exist ..\landscape.png copy /y ..\landscape.png $(OutDir)
+if exist ..\portrait.png copy /y ..\portrait.png $(OutDir)
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2.dll $(OutDir)
+copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2_image.dll $(OutDir)
+copy $(TouchGFXReleasePath)\lib\sdl2\win32\libpng16-16.dll $(OutDir)
+copy $(TouchGFXReleasePath)\lib\sdl2\win32\zlib1.dll $(OutDir)
+if exist ..\landscape.png copy /y ..\landscape.png $(OutDir)
+if exist ..\portrait.png copy /y ..\portrait.png $(OutDir)
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(TouchGFXReleasePath)\config\msvs\touchgfx_prebuild.targets" />
+  </ImportGroup>
+</Project>

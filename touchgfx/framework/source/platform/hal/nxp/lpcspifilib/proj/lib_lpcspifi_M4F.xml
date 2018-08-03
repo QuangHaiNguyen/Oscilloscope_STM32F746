@@ -1,0 +1,37 @@
+<project xmlns:xi="http://www.w3.org/2001/XInclude"
+	type="Static library" name="lpcspifilib_M4F"
+	chip="Generic-M4" vendor="NXP">
+	<import src="../src" dest="src">
+		<include>*.c</include>
+		<include>*.h</include>
+	</import>
+
+	<import src="../inc" dest="inc">
+		<include>*.h</include>
+	</import>
+
+	<setting id="assembler.fp">
+		<value>com.crt.advproject.gas.fpu.fpv4</value>
+	</setting>
+	<setting id="compiler.c.fp">
+		<value>com.crt.advproject.gcc.fpu.fpv4</value>
+	</setting>
+	<setting id="cpp.compiler.c.fp">
+		<value>com.crt.advproject.cpp.fpu.fpv4</value>
+	</setting>
+	<setting id="all.compiler.flags">
+		<value>-fsingle-precision-constant</value>
+	</setting>
+	<setting id="linker.fp">
+		<value>com.crt.advproject.link.fpu.fpv4</value>
+	</setting>
+	<setting id="compiler.def">
+		<value>CORE_M4</value>
+	</setting>
+
+	<setting id="compiler.inc">
+		<value>${workspace_loc:/${ProjName}/inc}</value>
+	</setting>
+
+</project>
+

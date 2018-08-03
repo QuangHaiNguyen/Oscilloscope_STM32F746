@@ -1,0 +1,11 @@
+firmware\fontgetters.o: ..\..\Graphic\generated\fonts\src\FontGetters.cpp
+firmware\fontgetters.o: ..\..\..\..\touchgfx\framework\include\touchgfx/InternalFlashFont.hpp
+firmware\fontgetters.o: ..\..\..\..\touchgfx\framework\include\touchgfx/ConstFont.hpp
+firmware\fontgetters.o: ..\..\..\..\touchgfx\framework\include\touchgfx/Font.hpp
+firmware\fontgetters.o: ..\..\..\..\touchgfx\framework\include\touchgfx/TextProvider.hpp
+firmware\fontgetters.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+firmware\fontgetters.o: ..\..\..\..\touchgfx\framework\include\touchgfx/Unicode.hpp
+firmware\fontgetters.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Types.hpp
+firmware\fontgetters.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+firmware\fontgetters.o: C:\DevTools\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+firmware\fontgetters.o: ..\..\..\..\touchgfx\framework\include\touchgfx/hal/Config.hpp

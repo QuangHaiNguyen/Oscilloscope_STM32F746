@@ -1,0 +1,20 @@
+#include <stdint.h>
+#include <touchgfx/Unicode.hpp>
+
+#ifndef NO_USING_NAMESPACE_TOUCHGFX
+using namespace touchgfx;
+#endif
+
+// Language <%= language %>: No substitution
+<% entries.each do |entry| %>
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP const touchgfx::Unicode::UnicodeChar <%= entry.text_id %>_<%= language %>[<%= entry.translation.length + 1%>] TEXT_LOCATION_FLASH_ATTRIBUTE = { <%=entry.unicodes %> };
+<% end %>
+
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP extern const touchgfx::Unicode::UnicodeChar* const texts<%= language %>[<%= entries.length %>] TEXT_LOCATION_FLASH_ATTRIBUTE =
+{
+<%= entries_texts_const_initialization %>
+
+};
+

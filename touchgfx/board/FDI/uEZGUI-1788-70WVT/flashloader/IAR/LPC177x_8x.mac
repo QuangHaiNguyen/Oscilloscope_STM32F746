@@ -1,0 +1,363 @@
+__var comments_on;
+
+// PLL registers
+__var PLL0CON;
+__var PLL0CFG;
+__var PLL0STAT;
+__var PLL0FEED;
+
+
+// SC registers
+__var SCS;
+__var CCLKSEL; // aka CCLKCFG
+__var CLKSRCSEL;
+__var FLASHCFG;
+__var PCLKSEL;
+__var EMCCLKSEL;
+__var SPIFISEL;
+__var PCONP;
+__var CLKOUTCFG;
+__var EMCDLYCTL;
+
+// EMC registers
+__var EMCControl;
+__var EMCStatus;
+__var EMCConfig;
+__var EMCDynamicControl;
+__var EMCDynamicRefresh;
+__var EMCDynamicConfig0;
+__var EMCDynamicRasCas0;
+__var EMCDynamicRP;
+__var EMCDynamicRAS;
+__var EMCDynamicSREX;
+__var EMCDynamicAPR;
+__var EMCDynamicDAL;
+__var EMCDynamicWR;
+__var EMCDynamicRC;
+__var EMCDynamicRFC;
+__var EMCDynamicXSR;
+__var EMCDynamicRRD;
+__var EMCDynamicMRD;
+
+init_vars()
+{
+    comments_on = 1;
+    
+    PLL0CON = 0x400FC080;
+    PLL0CFG = 0x400FC084;
+    PLL0STAT = 0x400FC088;
+    PLL0FEED = 0x400FC08C;
+    SCS = 0x400FC1A0;
+    CCLKSEL = 0x400FC104; // aka CCLKCFG
+    CLKSRCSEL = 0x400FC10C;
+    FLASHCFG = 0x400FC000;
+    PCLKSEL = 0x400FC1A8;
+    EMCCLKSEL = 0x400FC100;
+    SPIFISEL = 0x400FC1B4;
+    PCONP = 0x400FC0C4;
+    CLKOUTCFG = 0x400FC1C8;
+    EMCDLYCTL = 0x400FC1DC;
+    EMCControl = 0x2009C000;
+    EMCStatus = 0x2009C004;
+    EMCConfig = 0x2009C008;
+    EMCDynamicControl = 0x2009C020;
+    EMCDynamicRefresh = 0x2009C024;
+    EMCDynamicConfig0 = 0x2009C100;
+    EMCDynamicRasCas0 = 0x2009C104;
+    EMCDynamicRP = 0x2009C030;
+    EMCDynamicRAS = 0x2009C034;
+    EMCDynamicSREX = 0x2009C038;
+    EMCDynamicAPR = 0x2009C03C;
+    EMCDynamicDAL = 0x2009C040;
+    EMCDynamicWR = 0x2009C044;
+    EMCDynamicRC = 0x2009C048;
+    EMCDynamicRFC = 0x2009C04C;
+    EMCDynamicXSR = 0x2009C050;
+    EMCDynamicRRD = 0x2009C054;
+    EMCDynamicMRD = 0x2009C058;
+}
+
+config_pll_old()
+{
+    // Enable main clock
+    __writeMemory32(0x00000020, 0x400FC1A0, "Memory"); // SCS.OSCEN = 1
+    __delay(50); // Give the oscillator some startup time (50 ms)
+    // Set divider to 1 and switch to Sysclk
+    __writeMemory32(0x00000001, 0x400FC104, "Memory"); // CCLKSEL=1
+    // Disable the PLL.
+    __writeMemory32(0x00000000, 0x400FC080, "Memory"); // PLL0CON = 0
+    // Qualify the PLL change.
+    __writeMemory32(0x000000AA, 0x400FC08C, "Memory"); // PLL0FEED = 0xAA
+    __writeMemory32(0x00000055, 0x400FC08C, "Memory"); // PLL0FEED = 0x55
+
+    // Switch to main clock instead of internal RC for stable JTAG auto-speed
+    __writeMemory32(0x00000001, 0x400FC10C, "Memory"); // CLKSRCSEL = 1    
+
+    // Make sure that the flash memory system is correctly setup.
+    __writeMemory32(0x3A      , 0x400FC000, "Memory"); // FLASHCFG = 0x3A;
+
+    // If the MAM values was wrong, a dummy read is necessary to get the flash memory in sync.
+    __writeMemory32(0x00000001, 0x400FC040, "Memory"); // MEMMAP = 1
+    __readMemory32(0x00000000, "Memory");
+}
+
+write32(addr, data)
+{
+    __writeMemory32(data, addr, "Memory");
+}
+
+read32(addr)
+{
+    return __readMemory32(addr, "Memory");
+}
+
+comment(note)
+{
+    if (comments_on)
+        __message(note);
+}
+
+config_pll()
+{
+    comment("** PLL0STAT");
+    if (read32(PLL0STAT) & 0x2000000) {
+        // Disconnect PLL0
+        write32(PLL0CON, 1);
+        write32(PLL0FEED, 0xAA);
+        write32(PLL0FEED, 0x55);
+    }
+    
+    comment("** Disable PLL0");
+    write32(PLL0CON, 0);
+    write32(PLL0FEED, 0xAA);
+    write32(PLL0FEED, 0x55);
+    
+    comment("** Enable main oscillator");
+    write32(SCS, 0x20);
+    // (Wait here instead of checking)
+    __delay(50);
+    
+    comment("** Peripheral clock selection");
+    write32(PCLKSEL, 2);
+    
+    comment("** EMC Clock selection");
+    write32(EMCCLKSEL, 1);
+    
+    comment("** SPIFI Clock selection");
+    write32(SPIFISEL, 1);
+    
+    comment("** Select main oscillator as the PLL0 clock source");
+    write32(CLKSRCSEL, 1);
+    
+    comment("** Setup clock divider");
+    write32(CCLKSEL, 1);
+    
+    comment("** Set PLL0 Config");
+    write32(PLL0CFG, 9);
+    write32(PLL0FEED, 0xAA);
+    write32(PLL0FEED, 0x55);
+    
+    comment("** Enable PLL0 and connect");
+    write32(PLL0CON, 3);
+    write32(PLL0FEED, 0xAA);
+    write32(PLL0FEED, 0x55);
+    
+    comment("** Select clock sources");
+////    write32(CCLKSEL, read32(CCLKSEL) | 0x100);
+////    write32(SPIFISEL, 0x101);
+    
+    // Skipping USB PLL configuration here
+
+    comment("** Power control for peripherals (default)");
+    write32(PCONP, 0x042887DE);
+    
+    comment("** Clock output configuration");
+    write32(CLKOUTCFG, 0x100);
+
+    comment("** Setting flash accelerator to safest setup for 120 MHz");
+////    write32(FLASHCFG, 0x503A);
+    write32(FLASHCFG, 0x3A);
+    
+    comment("** MAM config");
+    // If the MAM values was wrong, a dummy read is necessary to get the flash memory in sync.
+    write32(0x400FC040, 0x1); // MEMMAP = 1
+    read32(0x00000000);
+}
+
+pin_set_mux(port, pin, mux)
+{
+    __var r;
+    __var addr;
+    
+    addr = 0x4002C000;
+    addr += port * 0x80;
+    addr += pin * 4;
+    
+    r = read32(addr);
+    r &= ~0x7;
+    write32(addr, r);
+}
+
+config_addr_pins_for_data32()
+{
+    comment ("Setup EMC Control lines");
+    pin_set_mux(2, 16, 1);
+    pin_set_mux(2, 17, 1);
+    pin_set_mux(2, 18, 1);
+    pin_set_mux(2, 20, 1);
+    pin_set_mux(2, 24, 1);
+    pin_set_mux(2, 28, 1);
+    pin_set_mux(2, 29, 1);
+    pin_set_mux(2, 30, 1);
+    pin_set_mux(2, 31, 1);
+
+    comment ("Setup Data 32-bit lines");
+    pin_set_mux(3, 0, 1);
+    pin_set_mux(3, 1, 1);
+    pin_set_mux(3, 2, 1);
+    pin_set_mux(3, 3, 1);
+    pin_set_mux(3, 4, 1);
+    pin_set_mux(3, 5, 1);
+    pin_set_mux(3, 6, 1);
+    pin_set_mux(3, 7, 1);
+    pin_set_mux(3, 8, 1);
+    pin_set_mux(3, 9, 1);
+    pin_set_mux(3, 10, 1);
+    pin_set_mux(3, 11, 1);
+    pin_set_mux(3, 12, 1);
+    pin_set_mux(3, 13, 1);
+    pin_set_mux(3, 14, 1);
+    pin_set_mux(3, 15, 1);
+    pin_set_mux(3, 16, 1);
+    pin_set_mux(3, 17, 1);
+    pin_set_mux(3, 18, 1);
+    pin_set_mux(3, 19, 1);
+    pin_set_mux(3, 20, 1);
+    pin_set_mux(3, 21, 1);
+    pin_set_mux(3, 22, 1);
+    pin_set_mux(3, 23, 1);
+    pin_set_mux(3, 24, 1);
+    pin_set_mux(3, 25, 1);
+    pin_set_mux(3, 26, 1);
+    pin_set_mux(3, 27, 1);
+    pin_set_mux(3, 28, 1);
+    pin_set_mux(3, 29, 1);
+    pin_set_mux(3, 30, 1);
+    pin_set_mux(3, 31, 1);
+
+    comment ("Setup Address lines A0-A23 plus OEn, WEn, and CS0n");
+    pin_set_mux(4, 0, 1);
+    pin_set_mux(4, 1, 1);
+    pin_set_mux(4, 2, 1);
+    pin_set_mux(4, 3, 1);
+    pin_set_mux(4, 4, 1);
+    pin_set_mux(4, 5, 1);
+    pin_set_mux(4, 6, 1);
+    pin_set_mux(4, 7, 1);
+    pin_set_mux(4, 8, 1);
+    pin_set_mux(4, 9, 1);
+    pin_set_mux(4, 10, 1);
+    pin_set_mux(4, 11, 1);
+    pin_set_mux(4, 12, 1);
+    pin_set_mux(4, 13, 1);
+    pin_set_mux(4, 14, 1);
+    pin_set_mux(4, 15, 1);
+    pin_set_mux(4, 16, 1);
+    pin_set_mux(4, 17, 1);
+    pin_set_mux(4, 18, 1);
+    pin_set_mux(4, 19, 1);
+    pin_set_mux(4, 20, 1);
+    pin_set_mux(4, 21, 1);
+    pin_set_mux(4, 22, 1);
+    pin_set_mux(4, 23, 1);
+    pin_set_mux(4, 24, 1);
+    pin_set_mux(4, 25, 1);
+    pin_set_mux(4, 30, 1);
+}
+
+config_sdram()
+{
+    comment("SDRAM: Power on and EMC reset");
+    write32(SCS, read32(SCS) & (~2));
+    write32(PCONP, read32(PCONP) | (1<<11));
+    
+    comment("SDRAM: Setup slow/default delays");
+    write32(EMCDLYCTL, 0x1010);
+    
+    comment("SDRAM: rest the EMC and put configuration back to power up reset");
+    write32(EMCControl, 1);
+    write32(EMCStatus, 0);
+    
+    comment("SDRAM: 8 Meg size");
+    write32(EMCDynamicConfig0, 0x5300);
+    
+    comment("SDRAM: RAS=2, CAS=2");
+    write32(EMCDynamicRasCas0, 0x00000202);
+
+    comment("SDRAM: Set timings");
+    write32(EMCDynamicRP, 2);
+    write32(EMCDynamicRAS, 3);
+    write32(EMCDynamicSREX, 5);
+    write32(EMCDynamicAPR, 2);
+    write32(EMCDynamicDAL, 4);
+    write32(EMCDynamicWR, 2);
+    write32(EMCDynamicRC, 4);
+    write32(EMCDynamicRFC, 4);
+    write32(EMCDynamicXSR, 5);
+    write32(EMCDynamicRRD, 1);
+    write32(EMCDynamicMRD, 2);
+    
+    comment("SDRAM: send NOP");
+    write32(EMCDynamicControl, 0x183);
+    __delay(200);
+    
+    comment("SDRAM: Send precharge-all");
+    write32(EMCDynamicControl, 0x100);
+    write32(EMCDynamicRefresh, 1);
+ 
+    comment("SDRAM: Wait at least 128 ABH clock cycles");
+    __delay(20);
+    
+    comment("SDRAM: St correct refresh period");
+    write32(EMCDynamicRefresh, 0x30);
+    
+    comment("SDRAM: Wait at least 128 ABH clock cycles");
+    __delay(20);
+    
+    comment("SDRAM: send MODE");
+    write32(EMCDynamicControl, 0x80);
+    read32(0xA0008800);
+
+    comment("SDRAM: Wait at least 128 ABH clock cycles");
+    __delay(20);
+   
+    write32(EMCDynamicControl, 0);
+    
+    comment("SDRAM: Enable buffer");
+    write32(EMCDynamicConfig0, read32(EMCDynamicConfig0) | 0x00080000);
+    
+    __delay(20);
+}
+
+__setup ()
+{
+    init_vars();
+    config_pll();
+//    config_addr_pins_for_data32();
+//    config_sdram();
+    
+    // Configure SDRAM
+//    __delay(50);
+}
+
+execUserFlashInit()
+{   
+    __message "------- Prepare for flashloader -------";
+    __setup();
+}
+
+execUserPreload()
+{   
+    __message "------- Prepare for debug -------";
+    __setup();
+}
