@@ -21,5 +21,6 @@ This tool is used for flasing the application
 * STM32 ST-Link Utility
 ## Flashing the application 
 * Start STM32 ST-Link utility, connect the board to PC, press **Connect to the target** button
+* Drag and drop the binary file into ST-Link. Binary file is located in folder *Project/Oscilloscope/Binary*
 * On the top menu bar, choose *External Loader -> Add External Loader -> Choose N25Q128A_STM32F746G-DISCO -> Click Validate*
 * Click **Program verify**, click **Start**
