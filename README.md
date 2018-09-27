@@ -17,8 +17,7 @@ Capabilities:
 These tools are used for developing the application 
 * Microsoft Visual Studio (Graphical interface development)
 * Keil (Embedded firmware development)
-This tool is used for flasing the application 
-* STM32 ST-Link Utility
+* STM32 ST-Link Utility (This tool is used for flasing the application)
 ## Flashing the application 
 * Start STM32 ST-Link utility, connect the board to PC, press **Connect to the target** button
 * Drag and drop the binary file into ST-Link. Binary file is located in folder *Project/Oscilloscope/Binary*
