@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
-Debug|Win32|C:\MyFiles\SoftwareTeam\Technologies_Boards\Graphic\TouchGFX\Scope\Project\Oscilloscope\Graphic\simulator\msvs\|
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
+Debug|Win32|C:\Users\haing\Desktop\Oscilloscope_STM32F746\Project\Oscilloscope\Graphic\simulator\msvs\|
