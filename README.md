@@ -2,7 +2,21 @@
   
 ![oscilloscope](Document/Picture/osc.jpg)
 
-## Update
+## Update 2
+
+Hi all, I have never realized that there are people being interested in this project and I have got some requests to port it to the actual STM32CubeIDE framework. Therefore I will dig the project up and spend sometime (during christmas maybe) to port it.
+
+It's not a promise since I still have some other pet projects but here are some milestones I can think of:
+
+* Port to actual STM32CubeIDE framework
+* Bug fix, refactor, redesign the GUI abit
+
+In the very far future:
+* Implement a spectrum analyzer
+* support a external ADC (coud be via SPI) so that the sampling frequency can be increased
+* Implement logic analyzer (quite tempting but I am not sure if the STM32F7 can handle it)
+
+## Update 1
 
 Since STMicroelectronics bought TouchGFX and integrate the graphical stack into the toolchain STM32CubeIDE, this application must be updated to the new toolchain.
 
