@@ -52,21 +52,22 @@ These tools are used for developing the application
 ## Flashing the application
 
 * Start STM32 ST-Link utility, connect the board to PC, press **Connect to the target** button
-* Drag and drop the binary file into ST-Link. Binary file is located in folder *Project/Oscilloscope/Binary*
+* Drag and drop the binary file into ST-Link. Binary file is located in folder *archive/Project/Oscilloscope/Binary*
 * On the top menu bar, choose *External Loader -> Add External Loader -> Choose N25Q128A_STM32F746G-DISCO -> Click Validate*
 * Click **Program verify**, click **Start**
 
+## Runing the application
+
+The 2 inputs channel 1 and 2 of the oscilloscope are located on pins A0 and A1 of the arduino header or PA0 and PF10 STM32F7 pin. The Input voltage for those pins are 3.3V.
+
 ## Project struture
-
-* Project: source code of the project
-
-  * Oscilloscope
-
-    * Binary: binary file of the application
-    * Firmware: source code of the firmware
-    * Graphic: source code of the graphical interface
-* touchgfx: TouchGFX stack
-
+* archive
+  * Project: source code of the project
+    * Oscilloscope
+      * Binary: binary file of the application
+      * Firmware: source code of the firmware
+      * Graphic: source code of the graphical interface
+  * touchgfx: TouchGFX stack
 ## Contact
 
 For any information or feedback, please use Issues or drop me an email: hainguyen.eeit@gmail.com
