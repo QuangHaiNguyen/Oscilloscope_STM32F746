@@ -1,0 +1,3 @@
+[submodule "oscilloscope/EasyEmbeddedFramework"]
+	path = oscilloscope/EasyEmbeddedFramework
+	url = https://github.com/QuangHaiNguyen/EasyEmbeddedFramework
