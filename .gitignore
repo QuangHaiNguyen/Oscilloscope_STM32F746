@@ -1,0 +1,5 @@
+oscilloscope/STM32CubeIDE/*.launch
+oscilloscope/STM32CubeIDE/Debug/
+oscilloscope/TouchGFX/build/
+oscilloscope/TouchGFX/generated/
+.metadata/

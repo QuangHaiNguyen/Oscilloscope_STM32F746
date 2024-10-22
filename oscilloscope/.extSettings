@@ -1,0 +1,5 @@
+[ProjectFiles]
+HeaderPath=../Drivers/BSP/Components/ft5336;../Drivers/BSP/STM32746G-Discovery;
+[Groups]
+Application/User/TouchGFX/target=../TouchGFX/target/CortexMMCUInstrumentation.cpp
+[Others]
