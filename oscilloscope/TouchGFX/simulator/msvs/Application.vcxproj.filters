@@ -184,6 +184,9 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>D4989ACD-57D8-2DFD-8075-CD1C588F8B2E</UniqueIdentifier>
     </Filter>
+    <Filter Include="EasyEmbedded">
+      <UniqueIdentifier>{f6715148-4f56-4c2c-9d0f-70f2de9d7585}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -224,6 +227,57 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\cli\ez_cli.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\data_model\ez_data_model.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\ez_app.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\ipc\ez_ipc.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\rpc\ez_rpc.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\ez_easy_embedded.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\service\driver\uart\ez_uart.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\service\event_notifier\ez_event_notifier.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\service\state_machine\ez_state_machine.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\assert\ez_assert.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\hexdump\ez_hexdump.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\linked_list\ez_linked_list.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\logging\ez_logging.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\queue\ez_queue.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\ring_buffer\ez_ring_buffer.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\static_alloc\ez_static_alloc.c">
+      <Filter>EasyEmbedded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\system_error\ez_system_error.c">
+      <Filter>EasyEmbedded</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -675,6 +729,69 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\cli\ez_cli.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\data_model\ez_data_model.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\ez_app.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\ipc\ez_ipc.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\app\rpc\ez_rpc.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\ez_easy_embedded.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\service\driver\ez_driver_def.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\service\driver\uart\ez_uart.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\service\event_notifier\ez_event_notifier.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\service\state_machine\ez_state_machine.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\assert\ez_assert.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\ez_utilities_common.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\hexdump\ez_hexdump.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\linked_list\ez_linked_list.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\logging\ez_logging.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\queue\ez_queue.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\ring_buffer\ez_ring_buffer.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\static_alloc\ez_static_alloc.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\system_error\ez_system_error.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EasyEmbeddedFramework\easy_embedded\utilities\system_error\ez_system_error_table.h">
+      <Filter>EasyEmbedded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\target\ez_target_config.h">
+      <Filter>EasyEmbedded</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

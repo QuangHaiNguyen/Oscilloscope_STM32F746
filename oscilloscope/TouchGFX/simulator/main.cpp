@@ -6,6 +6,7 @@
 #include <touchgfx/lcd/LCD.hpp>
 #include <stdlib.h>
 #include <simulator/mainBase.hpp>
+#include <ez_easy_embedded.h>
 
 using namespace touchgfx;
 
@@ -30,13 +31,14 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
     touchgfx::HAL& hal = touchgfx::touchgfx_generic_init<touchgfx::HALSDL2>(dma, lcd, tc, SIM_WIDTH, SIM_HEIGHT, 0, 0);
 
     setupSimulator(argc, argv, hal);
+    ezEasyEmbedded_Initialize();
 
     // Ensure there is a console window to print to using printf() or
     // std::cout, and read from using e.g. fgets or std::cin.
     // Alternatively, instead of using printf(), always use
     // touchgfx_printf() which will ensure there is a console to write
     // to.
-    //touchgfx_enable_stdio();
+    touchgfx_enable_stdio();
 
     touchgfx::HAL::getInstance()->taskEntry(); //Never returns
 
